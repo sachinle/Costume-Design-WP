@@ -50,10 +50,6 @@ function clamp(value, min, max) {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
 
-  /**
-   * Toggle the "scrolled" class that deepens the navbar background
-   * and shows a gold-tinted border after user scrolls past 60px.
-   */
   function onScroll() {
     if (window.scrollY > 60) {
       navbar.classList.add('navbar--scrolled');
@@ -63,10 +59,6 @@ function clamp(value, min, max) {
     highlightActiveNavLink();
   }
 
-  /**
-   * Highlight the nav link whose section is currently in view.
-   * Uses getBoundingClientRect to detect which section is dominant.
-   */
   function highlightActiveNavLink() {
     const navLinks = document.querySelectorAll('.navbar__link');
     const sections = document.querySelectorAll('section[id]');
@@ -110,10 +102,6 @@ function clamp(value, min, max) {
   const mobileMenu   = document.getElementById('mobileMenu');
   if (!hamburgerBtn || !mobileMenu) return;
 
-  /**
-   * Toggle menu open/closed.
-   * Updates aria attributes for screen readers.
-   */
   function toggleMenu(forceClose = false) {
     const isOpen = !forceClose && !hamburgerBtn.classList.contains('is-open');
 
@@ -190,11 +178,7 @@ function clamp(value, min, max) {
    04. SCROLL ANIMATIONS — INTERSECTION OBSERVER
    ================================================================ */
 (function initScrollAnimations() {
-  /**
-   * Watches all [data-animate] elements and adds 'is-visible' class
-   * once they enter the viewport. Uses staggered delays set via
-   * data-delay attribute (already mapped in CSS).
-   */
+
   const animateEls = document.querySelectorAll('[data-animate]');
   if (!animateEls.length) return;
 
@@ -231,12 +215,7 @@ function clamp(value, min, max) {
    05. COUNTER ANIMATION — STATS BAR
    ================================================================ */
 (function initCounters() {
-  /**
-   * Animates number counters from 0 to their target value.
-   * Each counter element must have:
-   *   - data-count="<number>"     (the target number)
-   *   - data-suffix="<string>"    (optional suffix e.g. "+", " Days")
-   */
+
   const counterEls = document.querySelectorAll('[data-count]');
   if (!counterEls.length) return;
 
@@ -362,23 +341,19 @@ function clamp(value, min, max) {
     }
   }
 
-  /**
-   * Clear all field errors.
-   */
   function clearAllErrors() {
     form.querySelectorAll('.form-input').forEach((field) => {
       setFieldError(field, '');
     });
   }
 
-  /* ---- Inline validation on blur ---- */
+
   form.querySelectorAll('.form-input').forEach((field) => {
     field.addEventListener('blur', function () {
       const error = validateField(this);
       setFieldError(this, error);
     });
 
-    // Live validation — clear error as user types
     field.addEventListener('input', function () {
       if (this.classList.contains('form-input--error')) {
         const error = validateField(this);
@@ -393,7 +368,6 @@ function clamp(value, min, max) {
 
     clearAllErrors();
 
-    // Validate all fields
     const fields  = form.querySelectorAll('.form-input');
     let hasErrors = false;
     let firstErrorField = null;
@@ -407,7 +381,6 @@ function clamp(value, min, max) {
       }
     });
 
-    // Focus the first field with an error
     if (hasErrors) {
       firstErrorField.focus();
       return;
@@ -421,18 +394,6 @@ function clamp(value, min, max) {
     submitBtn.disabled = true;
     btnText.textContent = 'Submitting…';
 
-    /**
-     * Simulated form submission.
-     * Replace the setTimeout below with an actual fetch() call
-     * to your backend/CRM endpoint.
-     *
-     * Example:
-     * fetch('/api/admissions', {
-     *   method: 'POST',
-     *   headers: { 'Content-Type': 'application/json' },
-     *   body: JSON.stringify(formData)
-     * }).then(handleSuccess).catch(handleError);
-     */
     setTimeout(() => {
       // Collect form data for logging (not sent anywhere without backend)
       const formData = new FormData(form);
@@ -507,10 +468,6 @@ function clamp(value, min, max) {
   const btn = document.getElementById('backToTop');
   if (!btn) return;
 
-  /**
-   * Show button after user scrolls down 400px,
-   * hide it when near the top.
-   */
   function toggleBackToTop() {
     if (window.scrollY > 400) {
       btn.removeAttribute('hidden');
@@ -536,12 +493,6 @@ function clamp(value, min, max) {
    09. STAGGERED ANIMATION — APPLY DELAY FROM data-delay ATTRIBUTE
    ================================================================ */
 (function applyAnimationDelays() {
-  /**
-   * The CSS already has fixed delay classes mapped to specific ms values
-   * (e.g. [data-delay="80"] { transition-delay: 80ms; }).
-   * This function dynamically adds transition-delay via inline style
-   * for any delays not covered by CSS, ensuring full flexibility.
-   */
   document.querySelectorAll('[data-delay]').forEach((el) => {
     const delay = parseInt(el.dataset.delay, 10);
     if (!isNaN(delay)) {
@@ -556,10 +507,7 @@ function clamp(value, min, max) {
    ================================================================ */
 (function initAccessibility() {
 
-  /**
-   * Ensure that clicking "Apply Now" buttons that link to #admission-form
-   * focus the first input in the form for a smoother UX.
-   */
+
   const applyNowLinks = document.querySelectorAll('a[href="#admission-form"]');
   applyNowLinks.forEach((link) => {
     link.addEventListener('click', () => {
@@ -570,10 +518,7 @@ function clamp(value, min, max) {
     });
   });
 
-  /**
-   * Announce page section changes to screen readers using a live region.
-   * This improves navigation feedback for assistive technology users.
-   */
+
   const liveRegion = document.createElement('div');
   liveRegion.setAttribute('aria-live', 'polite');
   liveRegion.setAttribute('aria-atomic', 'true');
@@ -609,10 +554,3 @@ function clamp(value, min, max) {
 })();
 
 
-/* ================================================================
-   INIT LOG
-   ================================================================ */
-console.info(
-  '%c✅ Rathinam × Raise Smart — B.Sc Costume Design & Fashion | Landing Page Loaded',
-  'color: #C9A84C; font-weight: bold; font-size: 14px;'
-);
