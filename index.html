@@ -95,7 +95,8 @@
 
           <h1 class="hero__title" id="heroTitle">
             B.Sc Costume<br />
-            <em>Design &amp; Fashion</em>
+            <em>Design &amp; Fashion</em><br>
+            <span style="font-size: 30px;">With GIP</span>
           </h1>
 
           <p class="hero__subtitle">
@@ -150,92 +151,35 @@
         </div>
 
         <!-- RIGHT: Admission Form -->
-        <div class="hero__form-wrapper" id="admission-form" data-animate="fade-left">
-          <div class="admission-card">
-            <div class="admission-card__header">
-              <h2 class="admission-card__title">Begin Your Journey</h2>
-              <p class="admission-card__subtitle">Admissions open — Limited seats available</p>
-              <span class="admission-card__badge">2025–26 Batch</span>
-            </div>
+<div class="hero__form-wrapper" id="admission-form" data-animate="fade-left">
+  <div class="admission-card">
 
-            <div class="npf_wgts" data-height="400px" data-w="847dbc8fd0b65f5e4badda6b84c235b2">
-            <form class="admission-form" id="admissionForm" novalidate aria-label="Admission enquiry form">
+    <!-- Dark header stays as-is -->
+    <div class="admission-card__header">
+      <h2 class="admission-card__title">Begin Your Journey</h2>
+      <p class="admission-card__subtitle">Admissions open — Limited seats available</p>
+      <span class="admission-card__badge">2026–27 Batch</span>
+    </div>
 
-              <div class="form-group">
-                <label class="form-label" for="studentName">
-                  Full Name <span class="form-required" aria-hidden="true">*</span>
-                </label>
-                <div class="form-input-wrap">
-                  <i class="fa-regular fa-user" aria-hidden="true"></i>
-                  <input type="text" id="studentName" name="studentName"
-                    class="form-input" placeholder="Enter your full name"
-                    required autocomplete="name" aria-required="true" />
-                </div>
-                <span class="form-error" id="nameError" role="alert"></span>
-              </div>
+    <!-- ✅ Third-party widget — white bg applied via .npf_wgts selector above -->
+    <div class="npf_wgts" data-height="400px" data-w="847dbc8fd0b65f5e4badda6b84c235b2"></div>
 
-              <div class="form-group">
-                <label class="form-label" for="studentPhone">
-                  Phone Number <span class="form-required" aria-hidden="true">*</span>
-                </label>
-                <div class="form-input-wrap">
-                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                  <input type="tel" id="studentPhone" name="studentPhone"
-                    class="form-input" placeholder="+91 XXXXX XXXXX"
-                    required autocomplete="tel" aria-required="true" pattern="[0-9+\s\-]{8,15}" />
-                </div>
-                <span class="form-error" id="phoneError" role="alert"></span>
-              </div>
+    <!-- ✅ OR if using your own form — wrap in admission-form-inner -->
+    <!-- <div class="admission-form-inner">
+      <form class="admission-form" id="admissionForm" novalidate aria-label="Admission enquiry form">
+        ... your form fields ...
+      </form>
+    </div> -->
 
-              <div class="form-group">
-                <label class="form-label" for="studentEmail">
-                  Email Address <span class="form-required" aria-hidden="true">*</span>
-                </label>
-                <div class="form-input-wrap">
-                  <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-                  <input type="email" id="studentEmail" name="studentEmail"
-                    class="form-input" placeholder="your@email.com"
-                    required autocomplete="email" aria-required="true" />
-                </div>
-                <span class="form-error" id="emailError" role="alert"></span>
-              </div>
+    <!-- Success Message -->
+    <div class="form-success" id="formSuccess" aria-live="polite" hidden>
+      <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+      <h3>Application Received!</h3>
+      <p>Our admissions team will reach out to you within 24 hours.</p>
+    </div>
 
-              <!-- Course Interest — options updated for Costume Design -->
-              <div class="form-group">
-                <label class="form-label" for="courseInterest">
-                  Course Interest <span class="form-required" aria-hidden="true">*</span>
-                </label>
-                <div class="form-input-wrap form-input-wrap--select">
-                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-                  <select id="courseInterest" name="courseInterest"
-                    class="form-input form-select" required aria-required="true">
-                    <option value="" disabled selected>Select your interest</option>
-                    <option value="costume">Costume Design &amp; Styling</option>
-                    <option value="fashion">Fashion Design &amp; Merchandising</option>
-                    <option value="pattern">Pattern Making &amp; Draping</option>
-                    <option value="textile">Textile &amp; Fabric Technology</option>
-                    <option value="boutique">Boutique &amp; Entrepreneurship</option>
-                    <option value="all">Complete B.Sc Costume Design &amp; Fashion</option>
-                  </select>
-                  <i class="fa-solid fa-chevron-down form-select-arrow" aria-hidden="true"></i>
-                </div>
-                <span class="form-error" id="courseError" role="alert"></span>
-              </div>
-
-              <button type="submit" class="btn btn--submit" id="submitBtn">
-                <span class="btn-text">Apply Now</span>
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-              </button>
-            </form>
-            </div>
-
-            <div class="form-success" id="formSuccess" aria-live="polite" hidden>
-              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-              <h3>Application Received!</h3>
-              <p>Our admissions team will reach out to you within 24 hours.</p>
-            </div>
-          </div>
-        </div>
+  </div>
+</div>
 
       </div>
     </section>
@@ -261,13 +205,10 @@
             <span class="stats-bar__label">KIT Items Included</span>
           </li>
           <li class="stats-bar__item" data-animate="fade-up" data-delay="300">
-            <span class="stats-bar__number" data-count="7" data-suffix=" Days">0</span>
+            <span class="stats-bar__number" data-count="3-5" data-suffix=" Days">0 - 0</span>
             <span class="stats-bar__label">International Immersion</span>
           </li>
-          <li class="stats-bar__item" data-animate="fade-up" data-delay="400">
-            <span class="stats-bar__number" data-count="12">0</span>
-            <span class="stats-bar__label">Course Deliverables</span>
-          </li>
+          
         </ul>
       </div>
     </section>
@@ -433,7 +374,7 @@
           <!-- 09 Adobe -->
           <article class="deliverable-card" data-animate="fade-up" data-delay="640">
             <div class="deliverable-card__icon-wrap deliverable-card__icon-wrap--red">
-              <i class="fa-brands fa-adobe" aria-hidden="true"></i>
+              <i class="fa-solid fa-id-card" aria-hidden="true"></i>
               <span class="deliverable-card__sno">09</span>
             </div>
             <div class="deliverable-card__body">
@@ -503,90 +444,6 @@
       </div>
     </section>
 
-
-    <!-- ============================================================
-         SECTION 4 : ADD-ONS / PRICING
-         ============================================================ -->
-    <section class="addons" id="addons" aria-labelledby="addonsTitle">
-      <div class="addons__bg" aria-hidden="true"></div>
-      <div class="container">
-
-        <div class="section-header section-header--light" data-animate="fade-up">
-          <span class="section-eyebrow section-eyebrow--light">Upgrade Your Experience</span>
-          <h2 class="section-title section-title--light" id="addonsTitle">
-            Premium <em>Add-Ons</em>
-          </h2>
-          <p class="section-subtitle section-subtitle--light">
-            Choose the tier that elevates your creative career to the global stage.
-          </p>
-        </div>
-
-        <div class="addons__grid">
-
-          <!-- ₹2,50,000 — Asian Immersion -->
-          <div class="pricing-card" data-animate="fade-up" data-delay="0">
-            <div class="pricing-card__header">
-              <span class="pricing-card__plan">Asian Immersion</span>
-              <div class="pricing-card__price">
-                <span class="pricing-card__currency">₹</span>
-                <span class="pricing-card__amount">2,50,000</span>
-                <span class="pricing-card__period">/ year</span>
-              </div>
-            </div>
-            <ul class="pricing-card__features" role="list">
-              <li class="pricing-card__feature">
-                <i class="fa-solid fa-check" aria-hidden="true"></i>
-                <span><strong>Fabric KIT</strong> — Professional fabric &amp; materials set</span>
-              </li>
-              <li class="pricing-card__feature">
-                <i class="fa-solid fa-check" aria-hidden="true"></i>
-                <span><strong>7 Days Asian Country</strong> — International immersion trip</span>
-              </li>
-              <li class="pricing-card__feature pricing-card__feature--note">
-                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-                <span>All base programme deliverables (items 1–12) included</span>
-              </li>
-            </ul>
-            <a href="#admission-form" class="btn btn--outline pricing-card__cta">
-              Apply Now
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-            </a>
-          </div>
-
-          <!-- ₹3,00,000 — Europe Elite (Featured) -->
-          <div class="pricing-card pricing-card--featured" data-animate="fade-up" data-delay="150">
-            <div class="pricing-card__badge">Most Popular</div>
-            <div class="pricing-card__header">
-              <span class="pricing-card__plan">Europe Elite</span>
-              <div class="pricing-card__price">
-                <span class="pricing-card__currency">₹</span>
-                <span class="pricing-card__amount">3,00,000</span>
-                <span class="pricing-card__period">/ year</span>
-              </div>
-            </div>
-            <ul class="pricing-card__features" role="list">
-              <li class="pricing-card__feature">
-                <i class="fa-solid fa-check" aria-hidden="true"></i>
-                <span><strong>Fabric KIT</strong> — Professional fabric &amp; materials set</span>
-              </li>
-              <li class="pricing-card__feature">
-                <i class="fa-solid fa-check" aria-hidden="true"></i>
-                <span><strong>5 Days Europe Country</strong> — Premium international immersion</span>
-              </li>
-              <li class="pricing-card__feature pricing-card__feature--note">
-                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-                <span>All base programme deliverables (items 1–12) included</span>
-              </li>
-            </ul>
-            <a href="#admission-form" class="btn btn--primary pricing-card__cta">
-              Apply Now
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
 
 
     <!-- ============================================================
